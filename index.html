@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #8ecae6ff;
+            color: #023047ff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #fb8500ff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #ffb703ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: none; /* Oculta todas las secciones inicialmente */
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 300px;
+            margin: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #219ebcff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Galería de Arte</h1>
+</header>
+<nav>
+    <a href="#" onclick="showSection('inicio')">Inicio</a>
+    <a href="#" onclick="showSection('galeria')">Galería</a>
+    <a href="#" onclick="showSection('contacto')">Contacto</a>
+</nav>
+<div id="inicio" class="container">
+    <h2>Bienvenido a nuestra galería de arte</h2>
+    <p>Explora nuestras colecciones de arte famosas.</p>
+</div>
+<div id="galeria" class="container">
+    <h2>Galería de Arte</h2>
+    <div class="gallery">
+        <img src="imagen1.png" alt="Mona Lisa">
+        <img src="imagen2.png" alt="Paisaje">
+        <img src="imagen3.jpg" alt="autosretratos">
+        <!-- Aquí puedes agregar más imágenes -->
+    </div>
+</div>
+<div id="contacto" class="container">
+    <h2>Contacto</h2>
+    <p>Ponte en contacto con nosotros para más información.</p>
+</div>
+<footer>
+    <p>&copy; 2024 Galería de Arte</p>
+</footer>
+<script>
+    function showSection(sectionId) {
+        // Oculta todas las secciones
+        var sections = document.querySelectorAll('.container');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+
+        // Muestra la sección seleccionada
+        var selectedSection = document.getElementById(sectionId);
+        selectedSection.style.display = 'block';
+    }
+</script>
+</body>
+</html>
